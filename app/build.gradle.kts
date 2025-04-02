@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
@@ -52,7 +53,21 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     //noinspection UseTomlInstead
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    //noinspection UseTomlInstead
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    //noinspection UseTomlInstead
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    //noinspection UseTomlInstead
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //noinspection UseTomlInstead
+    implementation("io.coil-kt:coil-compose:2.0.0")
+    //noinspection UseTomlInstead
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7") // This is the important dependency
+    // For lifecycle support
+    //noinspection UseTomlInstead
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+
     implementation(libs.converter.scalars)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
