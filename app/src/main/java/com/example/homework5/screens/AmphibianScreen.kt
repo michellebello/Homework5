@@ -106,12 +106,13 @@ fun AmphibianCard(amphibian: AmphibianInfo){
                     .build()
             )
             Text (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end =0.dp, top = 10.dp, bottom = 10.dp),
                 text = amphibian.description,
+                textAlign = TextAlign.Justify,
                 fontWeight = FontWeight.W300,
                 fontSize = 14.sp,
-                modifier = Modifier
-                    .padding(10.dp)
-
             )
         }
     }
